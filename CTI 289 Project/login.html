@@ -8,16 +8,17 @@
 </head>
 <body>
   <img src="4cnc.png">
-    <form action="/login.php" method="post">
+    <form method="POST" action="login.php">
         <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-          <label for="psw"><b>Password</b></label> 
-          <input type="password" placeholder="Enter Password" name="psw" required> 
+          <label for="userfield"><b>Username</b></label>
+          <input id="userfield" type="text" placeholder="Enter Username" name="username" required>
+          <label for="passfield"><b>Password</b></label> 
+          <input id="passfield" type="password" placeholder="Enter Password" name="password" required> 
             
           <button type="submit">Login</button>
         </div>
     
       </form>
+
 </body>
 </html>

@@ -1,24 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log-in</title>
-    <link rel="stylesheet" href="login.css">
-</head>
-<body>
-    <form action="login.php" method="post">
-      
-        <div class="container">
-          <label for="uname"><b>Username</b></label>
-          <input type="text" placeholder="Enter Username" name="uname" required>
-      
-          <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" name="psw" required>
-              
-          <button type="submit">Login</button>
-        </div>
-    
-      </form>
-</body>
-</html>
+<?php 
+    if ($_SERVER["REQUEST_METHOD"] == "POST"){
+      //get data
+      $username = $_POST['username'];
+      $password = $_POST['password'];
+
+      //connect to database
+      $host = "sql212.ezyro.com";
+      $dbuser = "ezyro_36067300";
+      $dbpsw = "a8822dc5f";
+      $dbname = "ezyro_36067300_logininfo";
+
+      $conn = new mysqli($host, $dbuser, $dbpsw, $dbname);
+        if ($conn->connect_error){
+            die("Connection Failed: ". $conn->connect_error);
+        };
+      //validate
+      $query = "SELECT * FROM login WHERE username='$username' AND password='$password'";
+
+      $result = $conn->query($query);
+
+      if($result->num_rows == 1) {
+        //login success
+        header("Location: main.html");
+        exit();
+      }
+      else{
+        //Login Failed
+        header("Location: login.html");
+        exit();
+      }
+
+      $conn->close();
+
+    };
+    ?>
