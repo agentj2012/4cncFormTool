@@ -1,41 +1,49 @@
 /* Style the tab */
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 20px solid #1f4873;
+    background-color: #1f4873;
   }
   
-  /* Style the buttons that are used to open the tab content */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-  }
+.tab button {
+  background-color: #a7cae9;
+  border: 5;
+  outline: thick;
+  cursor: pointer;
+  padding: 10px 20px;
+  transition: 0.85s;
+  border-radius: 80px;
+  font-size: 17px; 
+  float: right;
+}
   
   /* Change background color of buttons on hover */
   .tab button:hover {
-    background-color: #ddd;
+    background-color: #00fefe;
   }
   
   /* Create an active/current tablink class */
   .tab button.active {
-    background-color: grey;
+    background-color: #4ca3fa;
   }
   
   /* Style the tab content */
   .tabcontent {
     display: none;
-    padding: 6px 12px;
+    padding: 10px 22px;
     border: 1px solid #ccc;
     border-top: none;
   }
   iframe {
     width: 1874px;
     height: 600px;
-    border: 1px solid #ccc;
+    border: 5px solid #6caefa;
   }
-  
+  img {  
+       width: 20%;
+    display: inline-block;
+    margin-right: -10px;
+    padding-right: 30%;
+    text-align: left;
+    vertical-align: middle;
+}
